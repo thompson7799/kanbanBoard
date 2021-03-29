@@ -12,7 +12,7 @@ Am existing client has come to The Changing Workplace requesting a way that they
 
 These systems utilise a [Kanban board](https://www.atlassian.com/agile/kanban/boards) which allows the user to to manage their tickets into groups and move them between them as the task progresses.
 
-__The project manager has raised the following story:__
+__The project owner has raised the following story:__
 
 > ## Kanban style task organisation system
 >
