@@ -124,4 +124,3 @@ yarn hot
 This test is new and may be missing some details. If there is anything you feel could be improved or you have any questions feel free to contact:
 
 - [Carl Whittick](mailto:carl.whittick@changingworkplace.com) - Developer
-- [Christine Pilon](mailto:christine.pilon@changingworkplace.com) - IT Manager
