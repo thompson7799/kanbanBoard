@@ -34,7 +34,7 @@ A Mock-up of the idea is shown here:
 > 
 > __Acceptance Criteria__
 > 1.	As a Project Manager, I can interact with a Task in any column of the Kanban board and drag-and-drop this into any of the other columns on the Kanban board.
-> 3.	I can abandon thiis movement by dropping the Task back to its original position on the Kanban board 
+> 3.	I can abandon this movement by dropping the Task back to its original position on the Kanban board 
 
 > As a Project Manager
 > I can edit the description details of a Task
