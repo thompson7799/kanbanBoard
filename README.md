@@ -83,6 +83,4 @@ Copy .env.example into new .env file
 
 ## Contact/Support
 
-This test is new and may be missing some details. If there is anything you feel could be improved or you have any questions feel free to contact:
-
 - [Luke Thompson](mailto:thompsl1134@gmail.com) - Developer
