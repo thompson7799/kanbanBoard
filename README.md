@@ -1,11 +1,3 @@
-<p align="center"><img src="https://f9q6e2t7.stackpathcdn.com/wp-content/uploads/sites/3/2020/11/Software-Development.svg?x31688" width="200"></p>
-
-## About this challenge
-
-This challenge requires a strong knowledge of: Javascript, PHP, [Vuex](https://vuex.vuejs.org/) and [Laravel](https://laravel.com/). It also requires basic knowledge of: [Vue](https://vuejs.org/), CSS and [SCSS](https://sass-lang.com/).
-
-Estimated completion time is around 4 hours although you may take as long as you need.
-
 ## Scenario
 
 We have received feedback from our users on the new Task Management product (TM Tool) we have been working on. The TM Tool aims to provide Project Managers a way to more efficiently manage their team’s daily tasks compared to using Excel or other tracking tools. It is important that our product supports our clients Kanban style of working and we can the product to match functionality available in our competitors’ products, like Jira and Trello. 
@@ -69,58 +61,28 @@ A Mock-up of the idea is shown here:
 > 2.	If I interact with the icon button, the task is removed from the Kanban board, and cannot be seen by any user 
 
 
-## Existing Code
-
-This repository provides some existing code to speed up your development process. __All of the code provided should be considered a suggestion__, feel free to rewrite/optimise anything that has been provided.
-
-### Vue Components (```/resources/js/components```)
-
-
-- __KanbanBoard.vue__ - Wrapper component for the Kanban board with drag and drop set up on columns/cards.
-- __KanbanColumn.vue__ - Basic styling for a column with a title.
-- __KanbanItem.vue__ - Basic styling for an editable card.
-
-> Note: The drag and drop library used is [VueDraggable](https://github.com/SortableJS/Vue.Draggable#readme) based on the [Sortable.js](https://github.com/SortableJS/Sortable) library. See their documentation for more details.
-
-### Vuex (```/resources/js/store```)
-
-- __index.js__ - Vuex store set up to use modules.
-- __modules/kanban.js__ - Vuex module for handling the kanban board.
-
 ## Setup the project
-
-See the [Laravel 8.x documentation](https://laravel.com/docs/8.x/installation) for a full guide on setting up a Laravel project.
-
-For a quick start (if you have Docker avaliable) you can run:
-
 ```
-./vendor/bin/sail up
+composer install
 ```
-
-this will set up containers for a webserver, MySql database etc. automatically.
-
-Once that is set up you will need to install the NPM packages with:
-
 ```
 npm install
 ```
-__OR__
 ```
-yarn
+Copy .env.example into new .env file
 ```
-
-and run the Vue development server with:
-
 ```
-npm run hot
+./vendor/bin/sail up
 ```
-__OR__
 ```
-yarn hot
+./vendor/bin/sail artisan migrate
+```
+```
+./vendor/bin/sail artisan db:seed
 ```
 
 ## Contact/Support
 
 This test is new and may be missing some details. If there is anything you feel could be improved or you have any questions feel free to contact:
 
-- [Carl Whittick](mailto:carl.whittick@changingworkplace.com) - Developer
+- [Luke Thompson](mailto:thompsl1134@gmail.com) - Developer
