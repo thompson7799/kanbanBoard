@@ -83,4 +83,6 @@ Copy .env.example into new .env file
 
 ## Contact/Support
 
+Any issues setting up the project let me know.
+
 - [Luke Thompson](mailto:thompsl1134@gmail.com) - Developer
