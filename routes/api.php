@@ -19,3 +19,6 @@ use App\Http\Controllers\GroupController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::apiResource('board', 'App\Http\Controllers\Api\BoardController')->only(['index', 'update',]);
+Route::apiResource('board-item', 'App\Http\Controllers\Api\BoardColumnItemController')->only(['store', 'destroy']);

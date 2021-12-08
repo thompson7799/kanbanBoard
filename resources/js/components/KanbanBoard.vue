@@ -1,9 +1,9 @@
 <template>
-  <div v-if="items">
-    <draggable class="kanban-board" group="groups" v-model="items" @end="() => {}">
-      <kanban-column v-for="(group, groupId) in items" :key="'group_' + groupId" :label="group.label || 'Untitled'" @create="() => {}">
-        <draggable class="kanban-board__drop-area" group="{name: 'tasks_' + groupId, put: true}" v-model="items[groupId].tasks" @end="() => {}">
-          <kanban-item v-for="(card, cardId) in group.tasks" :key="'card_' + cardId" v-model="card.content" @change="() => {}" @delete="() => {}" />
+  <div v-if="columns">
+    <draggable class="kanban-board" group="groups" v-model="columns" @end="() => {}">
+      <kanban-column v-for="(column, columnId) in columns" :key="'group_' + columnId" :label="column.column_title || 'Untitled'" @create="() => createItem(column.column_id)">
+        <draggable class="kanban-board__drop-area" group="{name: 'tasks_' + columnId, put: true}" v-model="columns[columnId].items" @end="() => updateBoard()">
+          <kanban-item v-for="(item, itemId) in column.items" :key="'item_' + itemId" v-model="item.content" @change="() => updateBoard()" @delete="() => removeItem(item.item_id)" />
         </draggable>
       </kanban-column>
     </draggable>
@@ -15,6 +15,7 @@
 import KanbanColumn from './KanbanColumn'
 import KanbanItem from './KanbanItem'
 import draggable from 'vuedraggable'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
   components: {
@@ -22,22 +23,25 @@ export default {
     KanbanItem,
     draggable,
   },
-
-  data() {
-    return {
-      // Example structure
-      items: [
-        {
-          label: 'Todo',
-          tasks: [
-            {
-              content: 'hello world',
-            },
-          ],
-        },
-      ],
-    }
+  mounted() {
+    this.setBoard()
   },
+  methods: {
+    ...mapActions(
+      'kanban',
+      [
+        'setBoard',
+        'updateBoard',
+        'createItem',
+        'removeItem'
+      ])
+  },
+  computed: {
+    ...mapGetters({
+      board: "kanban/getBoard",
+      columns: "kanban/getBoardColumns",
+    })
+  }
 }
 </script>
 
